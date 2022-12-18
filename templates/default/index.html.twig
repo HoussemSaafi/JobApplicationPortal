@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DefaultController!{% endblock %}
+
+{% block body %}
+<style>
+    #logoJet{
+        width: 500px;
+    }
+    p{
+        font-size: 30px;
+        text-align: center;
+    }
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; }
+</style>
+
+<div class="example-wrapper d-flex flex-column align-items-center" >
+
+
+    <img class="logoJet" src="{{ asset('build/images/LOGO_JE_Tunisia.png') }}" alt="Logo JET" >
+    <h1> Bienvenue chez JET !! </h1>
+    <h2> FINT: find your internship ! </h2>
+    <p> C'est une plate-form de matching entre les étudiants cherchant des stages PFE et des entreprises ! </p>
+
+        <div class="buttons">
+            <a href="/login" > Login </a>
+            <a href="{{ path('app_registration') }}">Inscription</a>
+        </div>
+</div>
+{% endblock %}

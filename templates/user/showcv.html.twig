@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} FINT | Curriculum Vitae | {{ student.firstName ~ " " ~ student.lastName }}{% endblock %}
+
+{% block body %}
+
+    <div class="cv">
+        <img src="{{ asset(student.img) }}" alt="ACME logo">
+    <h1>{{ student.firstName }}</h1>
+    <h1>{{ student.lastName }}</h1>
+
+    <h1>Informations Personelles</h1>
+    <h3>{{ student.address }}</h3>
+    <h3>{{ user.email }}</h3>
+    <h3>{{ cv.linkedinAccount }}</h3>
+    {% for i in cv %}
+    <h3>{{ i.certificates ? i.certificates|json_encode : ''  }}</h3>
+    {% endfor %}
+
+    <h1>Experience educatives</h1>
+
+    {% for i in edu %}
+        <h3>{{ i.University }}</h3>
+        <h3>{{ i.period[0]}}</h3>
+        <h3>{{ i.description }}</h3>
+    {% endfor %}
+
+    <h1>Experience Professionelle</h1>
+    {% for i in pro %}
+        <h3>{{ i.type }}</h3>
+        <h3>{{ i.period[0]}}</h3>
+        <h3>{{ i.description }}</h3>
+        <h3>{{ i.entreprise }}</h3>
+        <h3>{{ i.poste }}</h3>
+    {% endfor %}
+    <h1>Experience Associatives</h1>
+    {% for i in asso %}
+        <h3>{{ i.organization }}</h3>
+        <h3>{{ i.period[0]}}</h3>
+        <h3>{{ i.description }}</h3>
+    {% endfor %}
+    </div>
+{% endblock %}

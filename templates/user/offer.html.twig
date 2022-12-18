@@ -1,0 +1,31 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %} FINT | {{ ent.name }} {% endblock %}
+
+{% block body %}
+<style>
+    img{
+        width: 400px;
+        height: 400px;
+        border-radius:50% ;
+    }
+    .d-flex div{
+        margin: 20px;
+    }
+    .d-flex{
+        margin: 20px;
+    }
+</style>
+
+<div class="container">
+    <img src={{ asset(ent.logoPath) }}>
+    <div>
+        <H1>{{ ent.name }}</H1>
+        <h6>{{ ent.description }}</h6>
+        <h4>Catalogue PFEs</h4>
+        <a class="btn btn-outline-info" href='{{ asset(offer.catalogue )}}'>Voir Catalogue: {{ offer.catalogue }}</a>
+        <a class="btn btn-dark">Postuler</a>
+    </div>
+</div>
+{% endblock %}
